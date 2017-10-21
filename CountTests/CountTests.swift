@@ -32,5 +32,34 @@ class CountTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    //MARK: Count Class Tests
+    
+    //Confirm that the Counter initializer returns a Counter object when passed valid parameters.
+    func testCounterInitializationSucceeds() {
+        //Counter is at zero
+        let zeroCountCounter = Counter.init(name:"Zero", count: 0)
+        XCTAssertNotNil(zeroCountCounter)
+        
+        //High counter value
+        let highCountCounter = Counter.init(name:"high", count: 329999)
+        XCTAssertNotNil(highCountCounter)
+    }
+    
+    
+    //Confirm that the Counter initializer returns nil when passed a negative rating or an empty name.
+    func testCounterInitializationFails() {
+        //Negative count
+        let negativeCountCounter = Counter.init(name:"negative", count: -1)
+        XCTAssertNil(negativeCountCounter)
+        
+        //Empty string
+        let emptyStringCounter = Counter.init(name: "", count: 0)
+        XCTAssertNil(emptyStringCounter)
+        
+        //Count too low
+        let tooLowCount = Counter.init(name:"tooHigh", count: -200)
+        XCTAssertNil(tooLowCount)
+        
+    }
     
 }
