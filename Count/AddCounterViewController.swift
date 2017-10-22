@@ -1,5 +1,5 @@
 //
-//  CounterViewController.swift
+//  AddCounterViewController.swift
 //  Count
 //
 //  Created by Fabian Butean on 19/10/2017.
@@ -10,7 +10,7 @@ import UIKit
 import os.log
 
 
-class CounterViewController: UIViewController, UITextFieldDelegate {
+class AddCounterViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Properties
     @IBOutlet weak var navigationBarTitle: UINavigationItem!
@@ -34,6 +34,7 @@ class CounterViewController: UIViewController, UITextFieldDelegate {
         
         //Enable the Save button only if the text field has a valid Meal name.
         updateSaveButtonState()
+        
     }
     
     //MARK: UITextFieldDelegate
@@ -93,6 +94,7 @@ class CounterViewController: UIViewController, UITextFieldDelegate {
         let text = nameTextField.text ?? ""
         saveButton.isEnabled = !text.isEmpty
     }
+    
 
 }
 

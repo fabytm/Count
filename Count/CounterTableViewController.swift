@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class CounterTableViewController: UITableViewController {
     
@@ -91,25 +92,56 @@ class CounterTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? ""){
+        
+            case "AddItem":
+                os_log("Adding a new meal.", log:OSLog.default, type: .debug)
+        
+            case "EditItem":
+            guard let counterEditViewController = segue.destination as? EditCounterViewController else{
+                fatalError("Unexpected destination: \(segue.destination)")
+        }
+            
+            guard let selectedCounterCell = sender as? CounterTableViewCell else{
+                fatalError("Unexpected sender: \(String(describing: sender))")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedCounterCell) else{
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedCounter = counters[indexPath.row]
+            counterEditViewController.counterObject = selectedCounter
+            //counterEditViewController.row = indexPath.row
+            
+        default:
+            fatalError("Unexpected Segue Identifier : \(String(describing: segue.identifier))")
+            
+        }
+        
+        
     }
-    */
+    
     
     //MARK: Actions
     @IBAction func unwindToCounterList(sender: UIStoryboardSegue){
-        if let sourceViewController = sender.source as? CounterViewController, let counter = sourceViewController.counterObject{
+        if let sourceViewController = sender.source as? AddCounterViewController, let counter = sourceViewController.counterObject{
             //Add a new counter.
             let newIndexPath = IndexPath(row: counters.count, section: 0)
             counters.append(counter)
             
             tableView.insertRows(at: [newIndexPath], with: .automatic)
+        
         }
+        
+        
     }
     
     //MARK: Private Methods

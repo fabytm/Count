@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0D0D64FF1F98FE4C006BE099 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0D64FE1F98FE4C006BE099 /* AppDelegate.swift */; };
-		0D0D65011F98FE4C006BE099 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0D65001F98FE4C006BE099 /* CounterViewController.swift */; };
+		0D0D65011F98FE4C006BE099 /* AddCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0D65001F98FE4C006BE099 /* AddCounterViewController.swift */; };
 		0D0D65041F98FE4C006BE099 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D0D65021F98FE4C006BE099 /* Main.storyboard */; };
 		0D0D65061F98FE4C006BE099 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D0D65051F98FE4C006BE099 /* Assets.xcassets */; };
 		0D0D65091F98FE4C006BE099 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D0D65071F98FE4C006BE099 /* LaunchScreen.storyboard */; };
 		0D0D65141F98FE4C006BE099 /* CountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0D65131F98FE4C006BE099 /* CountTests.swift */; };
+		0D14EA7F1F9C9C1A0026A8D4 /* EditCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D14EA7E1F9C9C1A0026A8D4 /* EditCounterViewController.swift */; };
 		0DD6F3C01F9B543F0031E40A /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6F3BF1F9B543F0031E40A /* Counter.swift */; };
 		0DD6F3C21F9B7CC00031E40A /* CounterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6F3C11F9B7CC00031E40A /* CounterTableViewCell.swift */; };
 		0DD6F3C41F9B7F5E0031E40A /* CounterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6F3C31F9B7F5E0031E40A /* CounterTableViewController.swift */; };
@@ -31,7 +32,7 @@
 /* Begin PBXFileReference section */
 		0D0D64FB1F98FE4C006BE099 /* Count.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Count.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D0D64FE1F98FE4C006BE099 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0D0D65001F98FE4C006BE099 /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
+		0D0D65001F98FE4C006BE099 /* AddCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCounterViewController.swift; sourceTree = "<group>"; };
 		0D0D65031F98FE4C006BE099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D0D65051F98FE4C006BE099 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D0D65081F98FE4C006BE099 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +40,7 @@
 		0D0D650F1F98FE4C006BE099 /* CountTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D0D65131F98FE4C006BE099 /* CountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountTests.swift; sourceTree = "<group>"; };
 		0D0D65151F98FE4C006BE099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D14EA7E1F9C9C1A0026A8D4 /* EditCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCounterViewController.swift; sourceTree = "<group>"; };
 		0DD6F3BF1F9B543F0031E40A /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		0DD6F3C11F9B7CC00031E40A /* CounterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterTableViewCell.swift; sourceTree = "<group>"; };
 		0DD6F3C31F9B7F5E0031E40A /* CounterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterTableViewController.swift; sourceTree = "<group>"; };
@@ -84,7 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				0D0D64FE1F98FE4C006BE099 /* AppDelegate.swift */,
-				0D0D65001F98FE4C006BE099 /* CounterViewController.swift */,
+				0D14EA7E1F9C9C1A0026A8D4 /* EditCounterViewController.swift */,
+				0D0D65001F98FE4C006BE099 /* AddCounterViewController.swift */,
 				0DD6F3BF1F9B543F0031E40A /* Counter.swift */,
 				0DD6F3C11F9B7CC00031E40A /* CounterTableViewCell.swift */,
 				0DD6F3C31F9B7F5E0031E40A /* CounterTableViewController.swift */,
@@ -210,7 +213,8 @@
 			files = (
 				0DD6F3C41F9B7F5E0031E40A /* CounterTableViewController.swift in Sources */,
 				0DD6F3C21F9B7CC00031E40A /* CounterTableViewCell.swift in Sources */,
-				0D0D65011F98FE4C006BE099 /* CounterViewController.swift in Sources */,
+				0D0D65011F98FE4C006BE099 /* AddCounterViewController.swift in Sources */,
+				0D14EA7F1F9C9C1A0026A8D4 /* EditCounterViewController.swift in Sources */,
 				0D0D64FF1F98FE4C006BE099 /* AppDelegate.swift in Sources */,
 				0DD6F3C01F9B543F0031E40A /* Counter.swift in Sources */,
 			);
