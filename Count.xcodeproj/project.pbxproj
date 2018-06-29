@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0574A3E120E5095400FB705E /* EditCounterInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574A3E020E5095400FB705E /* EditCounterInterfaceController.swift */; };
+		058B66EC2051967F0007E68A /* CountInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058B66EB2051967F0007E68A /* CountInterfaceController.swift */; };
+		05FDA81A204FFD5F002DB63A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05FDA818204FFD5F002DB63A /* Interface.storyboard */; };
+		05FDA81C204FFD5F002DB63A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05FDA81B204FFD5F002DB63A /* Assets.xcassets */; };
+		05FDA823204FFD5F002DB63A /* CountWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 05FDA822204FFD5F002DB63A /* CountWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		05FDA82A204FFD5F002DB63A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FDA829204FFD5F002DB63A /* ExtensionDelegate.swift */; };
+		05FDA82C204FFD5F002DB63A /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FDA82B204FFD5F002DB63A /* NotificationController.swift */; };
+		05FDA82E204FFD5F002DB63A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05FDA82D204FFD5F002DB63A /* Assets.xcassets */; };
+		05FDA833204FFD5F002DB63A /* CountWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 05FDA816204FFD5F002DB63A /* CountWatch.app */; };
+		05FDA8412050190B002DB63A /* CountRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FDA8402050190B002DB63A /* CountRowController.swift */; };
+		05FDA8422050250F002DB63A /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6F3BF1F9B543F0031E40A /* Counter.swift */; };
 		0D0D64FF1F98FE4C006BE099 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0D64FE1F98FE4C006BE099 /* AppDelegate.swift */; };
 		0D0D65011F98FE4C006BE099 /* AddCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0D65001F98FE4C006BE099 /* AddCounterViewController.swift */; };
 		0D0D65041F98FE4C006BE099 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D0D65021F98FE4C006BE099 /* Main.storyboard */; };
@@ -14,12 +25,27 @@
 		0D0D65091F98FE4C006BE099 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D0D65071F98FE4C006BE099 /* LaunchScreen.storyboard */; };
 		0D0D65141F98FE4C006BE099 /* CountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0D65131F98FE4C006BE099 /* CountTests.swift */; };
 		0D14EA7F1F9C9C1A0026A8D4 /* EditCounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D14EA7E1F9C9C1A0026A8D4 /* EditCounterViewController.swift */; };
+		0DB02E481FC04E000030EFDC /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB02E471FC04E000030EFDC /* AboutViewController.swift */; };
 		0DD6F3C01F9B543F0031E40A /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6F3BF1F9B543F0031E40A /* Counter.swift */; };
 		0DD6F3C21F9B7CC00031E40A /* CounterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6F3C11F9B7CC00031E40A /* CounterTableViewCell.swift */; };
 		0DD6F3C41F9B7F5E0031E40A /* CounterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6F3C31F9B7F5E0031E40A /* CounterTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		05FDA824204FFD5F002DB63A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D0D64F31F98FE4C006BE099 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05FDA821204FFD5F002DB63A;
+			remoteInfo = "CountWatch Extension";
+		};
+		05FDA831204FFD5F002DB63A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D0D64F31F98FE4C006BE099 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05FDA815204FFD5F002DB63A;
+			remoteInfo = CountWatch;
+		};
 		0D0D65101F98FE4C006BE099 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0D0D64F31F98FE4C006BE099 /* Project object */;
@@ -29,7 +55,46 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		05FDA839204FFD5F002DB63A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				05FDA823204FFD5F002DB63A /* CountWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05FDA83B204FFD5F002DB63A /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				05FDA833204FFD5F002DB63A /* CountWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0574A3DD20E4DE5900FB705E /* CountWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CountWatch Extension.entitlements"; sourceTree = "<group>"; };
+		0574A3E020E5095400FB705E /* EditCounterInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCounterInterfaceController.swift; sourceTree = "<group>"; };
+		058B66EB2051967F0007E68A /* CountInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountInterfaceController.swift; sourceTree = "<group>"; };
+		05FDA816204FFD5F002DB63A /* CountWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CountWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05FDA819204FFD5F002DB63A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		05FDA81B204FFD5F002DB63A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		05FDA81D204FFD5F002DB63A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05FDA822204FFD5F002DB63A /* CountWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CountWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		05FDA829204FFD5F002DB63A /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		05FDA82B204FFD5F002DB63A /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		05FDA82D204FFD5F002DB63A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		05FDA82F204FFD5F002DB63A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05FDA830204FFD5F002DB63A /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		05FDA8402050190B002DB63A /* CountRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountRowController.swift; sourceTree = "<group>"; };
 		0D0D64FB1F98FE4C006BE099 /* Count.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Count.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D0D64FE1F98FE4C006BE099 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D0D65001F98FE4C006BE099 /* AddCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCounterViewController.swift; sourceTree = "<group>"; };
@@ -41,12 +106,20 @@
 		0D0D65131F98FE4C006BE099 /* CountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountTests.swift; sourceTree = "<group>"; };
 		0D0D65151F98FE4C006BE099 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D14EA7E1F9C9C1A0026A8D4 /* EditCounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCounterViewController.swift; sourceTree = "<group>"; };
+		0DB02E471FC04E000030EFDC /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		0DD6F3BF1F9B543F0031E40A /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		0DD6F3C11F9B7CC00031E40A /* CounterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterTableViewCell.swift; sourceTree = "<group>"; };
 		0DD6F3C31F9B7F5E0031E40A /* CounterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		05FDA81F204FFD5F002DB63A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0D0D64F81F98FE4C006BE099 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -64,11 +137,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05FDA817204FFD5F002DB63A /* CountWatch */ = {
+			isa = PBXGroup;
+			children = (
+				05FDA818204FFD5F002DB63A /* Interface.storyboard */,
+				05FDA81B204FFD5F002DB63A /* Assets.xcassets */,
+				05FDA81D204FFD5F002DB63A /* Info.plist */,
+			);
+			path = CountWatch;
+			sourceTree = "<group>";
+		};
+		05FDA826204FFD5F002DB63A /* CountWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0574A3DD20E4DE5900FB705E /* CountWatch Extension.entitlements */,
+				05FDA8402050190B002DB63A /* CountRowController.swift */,
+				058B66EB2051967F0007E68A /* CountInterfaceController.swift */,
+				0574A3E020E5095400FB705E /* EditCounterInterfaceController.swift */,
+				05FDA829204FFD5F002DB63A /* ExtensionDelegate.swift */,
+				05FDA82B204FFD5F002DB63A /* NotificationController.swift */,
+				05FDA82D204FFD5F002DB63A /* Assets.xcassets */,
+				05FDA82F204FFD5F002DB63A /* Info.plist */,
+				05FDA830204FFD5F002DB63A /* PushNotificationPayload.apns */,
+			);
+			path = "CountWatch Extension";
+			sourceTree = "<group>";
+		};
 		0D0D64F21F98FE4C006BE099 = {
 			isa = PBXGroup;
 			children = (
 				0D0D64FD1F98FE4C006BE099 /* Count */,
 				0D0D65121F98FE4C006BE099 /* CountTests */,
+				05FDA817204FFD5F002DB63A /* CountWatch */,
+				05FDA826204FFD5F002DB63A /* CountWatch Extension */,
 				0D0D64FC1F98FE4C006BE099 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,6 +179,8 @@
 			children = (
 				0D0D64FB1F98FE4C006BE099 /* Count.app */,
 				0D0D650F1F98FE4C006BE099 /* CountTests.xctest */,
+				05FDA816204FFD5F002DB63A /* CountWatch.app */,
+				05FDA822204FFD5F002DB63A /* CountWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +188,7 @@
 		0D0D64FD1F98FE4C006BE099 /* Count */ = {
 			isa = PBXGroup;
 			children = (
+				0DB02E471FC04E000030EFDC /* AboutViewController.swift */,
 				0D0D64FE1F98FE4C006BE099 /* AppDelegate.swift */,
 				0D14EA7E1F9C9C1A0026A8D4 /* EditCounterViewController.swift */,
 				0D0D65001F98FE4C006BE099 /* AddCounterViewController.swift */,
@@ -111,6 +215,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		05FDA815204FFD5F002DB63A /* CountWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05FDA83A204FFD5F002DB63A /* Build configuration list for PBXNativeTarget "CountWatch" */;
+			buildPhases = (
+				05FDA814204FFD5F002DB63A /* Resources */,
+				05FDA839204FFD5F002DB63A /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05FDA825204FFD5F002DB63A /* PBXTargetDependency */,
+			);
+			name = CountWatch;
+			productName = CountWatch;
+			productReference = 05FDA816204FFD5F002DB63A /* CountWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		05FDA821204FFD5F002DB63A /* CountWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05FDA838204FFD5F002DB63A /* Build configuration list for PBXNativeTarget "CountWatch Extension" */;
+			buildPhases = (
+				05FDA81E204FFD5F002DB63A /* Sources */,
+				05FDA81F204FFD5F002DB63A /* Frameworks */,
+				05FDA820204FFD5F002DB63A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CountWatch Extension";
+			productName = "CountWatch Extension";
+			productReference = 05FDA822204FFD5F002DB63A /* CountWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		0D0D64FA1F98FE4C006BE099 /* Count */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D0D65181F98FE4C006BE099 /* Build configuration list for PBXNativeTarget "Count" */;
@@ -118,10 +256,12 @@
 				0D0D64F71F98FE4C006BE099 /* Sources */,
 				0D0D64F81F98FE4C006BE099 /* Frameworks */,
 				0D0D64F91F98FE4C006BE099 /* Resources */,
+				05FDA83B204FFD5F002DB63A /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				05FDA832204FFD5F002DB63A /* PBXTargetDependency */,
 			);
 			name = Count;
 			productName = Count;
@@ -152,10 +292,23 @@
 		0D0D64F31F98FE4C006BE099 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Fabian Butean";
 				TargetAttributes = {
+					05FDA815204FFD5F002DB63A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					05FDA821204FFD5F002DB63A = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
+					};
 					0D0D64FA1F98FE4C006BE099 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -182,11 +335,30 @@
 			targets = (
 				0D0D64FA1F98FE4C006BE099 /* Count */,
 				0D0D650E1F98FE4C006BE099 /* CountTests */,
+				05FDA815204FFD5F002DB63A /* CountWatch */,
+				05FDA821204FFD5F002DB63A /* CountWatch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		05FDA814204FFD5F002DB63A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05FDA81C204FFD5F002DB63A /* Assets.xcassets in Resources */,
+				05FDA81A204FFD5F002DB63A /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05FDA820204FFD5F002DB63A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05FDA82E204FFD5F002DB63A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0D0D64F91F98FE4C006BE099 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -207,6 +379,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		05FDA81E204FFD5F002DB63A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				058B66EC2051967F0007E68A /* CountInterfaceController.swift in Sources */,
+				05FDA8422050250F002DB63A /* Counter.swift in Sources */,
+				05FDA8412050190B002DB63A /* CountRowController.swift in Sources */,
+				05FDA82C204FFD5F002DB63A /* NotificationController.swift in Sources */,
+				0574A3E120E5095400FB705E /* EditCounterInterfaceController.swift in Sources */,
+				05FDA82A204FFD5F002DB63A /* ExtensionDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0D0D64F71F98FE4C006BE099 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -214,6 +399,7 @@
 				0DD6F3C41F9B7F5E0031E40A /* CounterTableViewController.swift in Sources */,
 				0DD6F3C21F9B7CC00031E40A /* CounterTableViewCell.swift in Sources */,
 				0D0D65011F98FE4C006BE099 /* AddCounterViewController.swift in Sources */,
+				0DB02E481FC04E000030EFDC /* AboutViewController.swift in Sources */,
 				0D14EA7F1F9C9C1A0026A8D4 /* EditCounterViewController.swift in Sources */,
 				0D0D64FF1F98FE4C006BE099 /* AppDelegate.swift in Sources */,
 				0DD6F3C01F9B543F0031E40A /* Counter.swift in Sources */,
@@ -231,6 +417,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		05FDA825204FFD5F002DB63A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05FDA821204FFD5F002DB63A /* CountWatch Extension */;
+			targetProxy = 05FDA824204FFD5F002DB63A /* PBXContainerItemProxy */;
+		};
+		05FDA832204FFD5F002DB63A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05FDA815204FFD5F002DB63A /* CountWatch */;
+			targetProxy = 05FDA831204FFD5F002DB63A /* PBXContainerItemProxy */;
+		};
 		0D0D65111F98FE4C006BE099 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0D0D64FA1F98FE4C006BE099 /* Count */;
@@ -239,6 +435,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		05FDA818204FFD5F002DB63A /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05FDA819204FFD5F002DB63A /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		0D0D65021F98FE4C006BE099 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -258,6 +462,80 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		05FDA834204FFD5F002DB63A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4ZY6LBL486;
+				IBSC_MODULE = CountWatch_Extension;
+				INFOPLIST_FILE = CountWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = TheFabytm.Count.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Debug;
+		};
+		05FDA835204FFD5F002DB63A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4ZY6LBL486;
+				IBSC_MODULE = CountWatch_Extension;
+				INFOPLIST_FILE = CountWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = TheFabytm.Count.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Release;
+		};
+		05FDA836204FFD5F002DB63A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4ZY6LBL486;
+				INFOPLIST_FILE = "CountWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TheFabytm.Count.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Debug;
+		};
+		05FDA837204FFD5F002DB63A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4ZY6LBL486;
+				INFOPLIST_FILE = "CountWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TheFabytm.Count.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Release;
+		};
 		0D0D65161F98FE4C006BE099 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -272,6 +550,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -279,6 +558,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -329,6 +609,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -336,6 +617,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -401,6 +683,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4ZY6LBL486;
 				INFOPLIST_FILE = CountTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TheFabytm.CountTests;
@@ -417,6 +700,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4ZY6LBL486;
 				INFOPLIST_FILE = CountTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.TheFabytm.CountTests;
@@ -430,6 +714,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		05FDA838204FFD5F002DB63A /* Build configuration list for PBXNativeTarget "CountWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05FDA836204FFD5F002DB63A /* Debug */,
+				05FDA837204FFD5F002DB63A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05FDA83A204FFD5F002DB63A /* Build configuration list for PBXNativeTarget "CountWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05FDA834204FFD5F002DB63A /* Debug */,
+				05FDA835204FFD5F002DB63A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0D0D64F61F98FE4C006BE099 /* Build configuration list for PBXProject "Count" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

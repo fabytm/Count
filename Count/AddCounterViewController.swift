@@ -17,13 +17,18 @@ class AddCounterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var counterNumberLabel: UILabel!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet var alterButtons: [UIButton]!
     
     /*
- This value is either passed by 'MealTableViewController' in 'prepare(for:sender:)' or constructed as part of adding a new meal.
+ This value is either passed by 'CounterTableViewController' in 'prepare(for:sender:)' or constructed as part of adding a new counter.
  */
     var counterObject: Counter?
     
-    var counter = 0
+    var counter = 0{
+        didSet {
+            counterNumberLabel.text = "\(counter)"
+        }
+    }
     
 
     override func viewDidLoad() {
@@ -78,14 +83,16 @@ class AddCounterViewController: UIViewController, UITextFieldDelegate {
     
     
     //MARK: Actions
-    @IBAction func addOneToCounter(_ sender: UIButton) {
-        counter += 1
-        counterNumberLabel.text = "\(counter)"
-    }
     
-    @IBAction func addTenToCounter(_ sender: UIButton) {
-        counter += 10
-        counterNumberLabel.text = "\(counter)"
+    @IBAction func alterNumberLabel(_ sender: UIButton) {
+        if let buttonFunction = alterButtons.index(of: sender){
+            if buttonFunction == 0 {
+                counter += 1
+            }else{
+                counter += 10
+            }
+            
+        }
     }
     //MARK: Private Methods
     

@@ -10,6 +10,9 @@ import UIKit
 
 class CounterTableViewCell: UITableViewCell {
     
+    var counterObject: Counter?
+
+    
     //MARK: Properties
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
@@ -25,5 +28,22 @@ class CounterTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    //MARK: Actions
+    @IBAction func addOneToCounter(_ sender: UIButton) {
+        var counter: Int = Int(countLabel.text ?? "") ?? 0
+        counter += 1
+        countLabel.text = "\(counter)"
+       /*
+        let count = Int(countLabel.text ?? "") ?? 0
+        let name = nameLabel.text ?? ""
+        
+        
+        counterObject = Counter(name: name, count: count)
+ */
+
+        
+    }
+    
 
 }

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
+    </dependencies>
+    <scenes>
+        <!--Count Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="CountInterfaceController" customModule="CountWatch_Extension">
+                    <items>
+                        <table alignment="left" id="t7S-4W-llW">
+                            <items>
+                                <tableRow identifier="CountRowController" id="ix8-QN-yVO" customClass="CountRowController" customModule="CountWatch_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="Skj-zB-6aI">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="Label" id="4I2-Sm-yNn"/>
+                                            <label alignment="right" verticalAlignment="center" text="Label" textAlignment="left" id="ZPn-N1-i4R"/>
+                                        </items>
+                                        <connections>
+                                            <segue destination="EXq-Zu-d29" kind="push" id="hq1-pj-f8U"/>
+                                        </connections>
+                                    </group>
+                                    <connections>
+                                        <outlet property="countCounterLabel" destination="ZPn-N1-i4R" id="ZIz-GJ-lnC"/>
+                                        <outlet property="countNameLabel" destination="4I2-Sm-yNn" id="wD9-81-JT6"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <variation key="device=watch42mm">
+                        <mask key="items">
+                            <include reference="t7S-4W-llW"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <outlet property="dataTable" destination="t7S-4W-llW" id="Fbm-zl-hJH"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Edit Counter Interface Controller-->
+        <scene sceneID="veL-je-4US">
+            <objects>
+                <controller id="EXq-Zu-d29" customClass="EditCounterInterfaceController" customModule="CountWatch_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="Ler-XQ-3so">
+                            <items>
+                                <label alignment="left" text="Label" textAlignment="center" id="M5H-HW-0cm"/>
+                                <label alignment="right" text="Label" textAlignment="center" id="fi7-Gy-DMZ"/>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="+1" id="frW-Tr-06P">
+                            <color key="titleColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="alterNumberLabel:" destination="EXq-Zu-d29" id="7RH-Qn-h9h"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="-1" id="fLX-XS-XyC">
+                            <color key="titleColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="alterNumberLabel:" destination="EXq-Zu-d29" id="23R-XU-SqB"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="+10" id="1c7-Lr-8fc">
+                            <color key="titleColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="alterNumberLabel:" destination="EXq-Zu-d29" id="ktt-f6-vI7"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="counterNameLabel" destination="M5H-HW-0cm" id="CT9-Do-qLT"/>
+                        <outlet property="counterNumberLabel" destination="fi7-Gy-DMZ" id="LIz-ww-dGR"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="531" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="CountWatch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>

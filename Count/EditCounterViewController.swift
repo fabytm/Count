@@ -9,26 +9,24 @@
 import UIKit
 import os.log
 
-protocol BackProtocol{
-    func sendCounterBack(counterName: String, counterNumber: Int)
-}
 
 class EditCounterViewController: UIViewController, UITextFieldDelegate {
 
     //MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var counterNumberLabel: UILabel!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var counterNameLabel: UINavigationItem!
+    @IBOutlet var alterButtons: [UIButton]!
     
     
     /*
-     This value is either passed by 'MealTableViewController' in 'prepare(for:sender:)' or constructed as part of adding a new meal.
+     This value is either passed by 'CounterTableViewController' in 'prepare(for:sender:)' or constructed as part of adding a new meal.
      */
     var counterObject: Counter?
-    var row: Int?
-    var myProtocol: BackProtocol?
-    
-    var counter = 0
-    
+
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +37,10 @@ class EditCounterViewController: UIViewController, UITextFieldDelegate {
         if let counterObject = counterObject {
             navigationItem.title = counterObject.name
             counterNumberLabel.text = "\(counterObject.count)"
+
         }
         
-        //Enable the Save button only if the text field has a valid Meal name.
-        updateSaveButtonState()
+        
         
         
     }
@@ -51,7 +49,10 @@ class EditCounterViewController: UIViewController, UITextFieldDelegate {
         super.viewWillDisappear(animated)
         
         if(self.isMovingFromParentViewController){
-            //CounterTableViewController.counters[row] = counterObject
+            let count = Int(counterNumberLabel.text ?? "") ?? 0
+            let name = counterNameLabel.title ?? ""
+            
+            counterObject = Counter(name: name, count: count)
             
         }
     }
@@ -64,7 +65,7 @@ class EditCounterViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        updateSaveButtonState()
+        //updateSaveButtonState()
         navigationItem.title = textField.text
         
         
@@ -76,41 +77,61 @@ class EditCounterViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: Navigation
-    @IBAction func cancel(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
+    //@IBAction func cancel(_ sender: UIBarButtonItem) {
+   //     dismiss(animated: true, completion: nil)
+   // }
     
     //This method lets you configure a view controller before it's presented.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        super.prepare(for: segue, sender: sender)
-        //guard let button = sender as? UIBarButtonItem, button === saveButton else{
-          //  os_log("The save button was not pressed, cancelling", log:OSLog.default, type: .debug)
-            //return
-        //}
         
-        let name = nameTextField.text ?? ""
+        super.prepare(for: segue, sender: sender)
+        
+        guard let button = sender as? UIBarButtonItem, button === saveButton else{
+            os_log("The save button was not pressed, cancelling", log:OSLog.default, type: .debug)
+            return
+        }
         let count = Int(counterNumberLabel.text ?? "") ?? 0
+        let name = counterNameLabel.title ?? ""
+
         
         counterObject = Counter(name: name, count: count)
         
     }
     
     
-    //MARK: Actions
-    @IBAction func addOneToCounter(_ sender: UIButton) {
-        counter += 1
-        counterNumberLabel.text = "\(counter)"
+   //MARK: Actions
+
+    @IBAction func alterNumberLabel(_ sender: UIButton){
+        if let buttonFunction = alterButtons.index(of: sender){
+            var counter: Int = Int(counterNumberLabel.text ?? "") ?? 0
+            switch buttonFunction {
+            case 0:
+                if(counter >= 1){
+                    counter -= 1
+                }
+            case 1:
+                counter += 1
+            case 2:
+                if(counter >= 10){
+                    counter -= 10
+                }
+            case 3:
+                counter += 10
+            default:
+                break
+            }
+           counterNumberLabel.text = "\(counter)"
+        }
     }
     
-    @IBAction func addTenToCounter(_ sender: UIButton) {
-        counter += 10
-        counterNumberLabel.text = "\(counter)"
-    }
+    
     //MARK: Private Methods
     
-    private func updateSaveButtonState(){
+    /*private func updateSaveButtonState(){
         //Disable the save button if the text field is empty.
         let text = nameTextField.text ?? ""
         //saveButton.isEnabled = !text.isEmpty
     }
+    */
+
 }

@@ -8,19 +8,51 @@
 
 import UIKit
 import os.log
+import WatchConnectivity
 
-class CounterTableViewController: UITableViewController {
+
+class CounterTableViewController: UITableViewController, WCSessionDelegate {
+    func session(_ session: WCSession,
+                 activationDidCompleteWith activationState: WCSessionActivationState,
+                 error: Error?){
+    
+    }
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        
+    }
+    
     
     //MARK: Properties
     
     var counters = [Counter]()
+    var session: WCSession!
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
-        //Add sample data
-        loadSampleCounters()
+        
+        //Adding edit button
+        navigationItem.leftBarButtonItem = editButtonItem
+        
+        if let savedCounters = loadCounters(){
+            counters += savedCounters
+        }else{
+            //Add sample data
+            loadSampleCounters()
+        }
+        
+       
     }
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -50,6 +82,7 @@ class CounterTableViewController: UITableViewController {
         cell.nameLabel.text = counter.name
         cell.countLabel.text = "\(counter.count)"
         
+        
 
         // Configure the cell...
 
@@ -57,26 +90,29 @@ class CounterTableViewController: UITableViewController {
     }
     
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
 
-    /*
+
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            counters.remove(at: indexPath.row)
+            saveCounters()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
+        
     }
-    */
-
+    
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
@@ -138,13 +174,48 @@ class CounterTableViewController: UITableViewController {
             counters.append(counter)
             
             tableView.insertRows(at: [newIndexPath], with: .automatic)
-        
+            
+            //Save the counters.
+            saveCounters()
+            
+        } else if let sourceViewController = sender.source as? EditCounterViewController, let counter = sourceViewController.counterObject{
+            if let selectedIndexPath = tableView.indexPathForSelectedRow{
+                //Update an existing counter
+                counters[selectedIndexPath.row] = counter
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            }
+            //Save the counters.
+            saveCounters()
         }
-        
-        
     }
+
+    
     
     //MARK: Private Methods
+    @IBAction func addOne(_ sender: UIButton) {
+        
+        if let indexPath = getIndexPath(of: sender){
+        
+        
+        var counter: Int = counters[indexPath.row].count
+        counter += 1
+        counters[indexPath.row].count = counter
+        
+        saveCounters()
+        }
+    }
+    
+    private func getIndexPath(of element:Any) -> IndexPath?
+    {
+        if let view =  element as? UIView
+        {
+            // Converting to table view coordinate system
+            let pos = view.convert(CGPoint.zero, to: self.tableView)
+            // Getting the index path according to the converted position
+            return tableView.indexPathForRow(at: pos)
+        }
+        return nil
+    }
     
     private func loadSampleCounters(){
         
@@ -158,5 +229,20 @@ class CounterTableViewController: UITableViewController {
         
         counters += [counter1, counter2]
     }
+    
+    private func saveCounters(){
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(counters, toFile:Counter.ArchiveURL.path)
+        
+        if isSuccessfulSave {
+            os_log("Counters successfully saved.", log: OSLog.default, type: .debug)
+        }else{
+            os_log("Failed to save counters...",log: OSLog.default, type: .debug)
+        }
+    }
+    
+    private func loadCounters() -> [Counter]? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Counter.ArchiveURL.path) as? [Counter]
+    }
+
 
 }

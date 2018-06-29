@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Bu-ac-wcF">
-    <device id="retina5_9" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LQQ-OM-T31">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,38 +14,38 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="AddCounterViewController" customModule="Count" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0sQ-cf-cU0">
-                                <rect key="frame" x="20" y="108" width="335" height="220.66666666666669"/>
+                                <rect key="frame" x="20" y="83.999999999999986" width="374" height="220.66666666666663"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter counter name." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RRX-y3-6l8">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJG-Vy-HBY">
-                                        <rect key="frame" x="157" y="50" width="21.333333333333343" height="40.666666666666657"/>
+                                        <rect key="frame" x="176.33333333333334" y="50" width="21.333333333333343" height="40.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5I-OS-LVU">
-                                        <rect key="frame" x="152.66666666666666" y="110.66666666666667" width="30" height="45.000000000000014"/>
+                                        <rect key="frame" x="172" y="110.66666666666666" width="30" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="+1"/>
                                         <connections>
-                                            <action selector="addOneToCounter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pwj-L0-Mwg"/>
+                                            <action selector="alterNumberLabel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8l4-Ls-xP1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRo-o6-cef">
-                                        <rect key="frame" x="145" y="175.66666666666669" width="45" height="45"/>
+                                        <rect key="frame" x="164.66666666666666" y="175.66666666666669" width="45" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="+10"/>
                                         <connections>
-                                            <action selector="addTenToCounter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="otK-0L-JrJ"/>
+                                            <action selector="alterNumberLabel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tgC-tq-PxG"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -80,56 +80,88 @@
                         <outlet property="nameTextField" destination="RRX-y3-6l8" id="RK8-bd-AV6"/>
                         <outlet property="navigationBarTitle" destination="oPc-H2-NFd" id="2Wc-2g-Jw6"/>
                         <outlet property="saveButton" destination="XYV-D9-sSy" id="iJm-Or-sh2"/>
+                        <outletCollection property="alterButtons" destination="z5I-OS-LVU" collectionClass="NSMutableArray" id="fK6-qS-VfG"/>
+                        <outletCollection property="alterButtons" destination="VRo-o6-cef" collectionClass="NSMutableArray" id="jb9-9U-r1S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="clE-q1-jwG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1127.2" y="132.26600985221674"/>
+            <point key="canvasLocation" x="1469.5999999999999" y="132.26600985221674"/>
         </scene>
         <!--Counter-->
         <scene sceneID="U5y-bd-7lr">
             <objects>
-                <viewController id="kuH-Ag-E7F" customClass="EditCounterViewController" customModule="Count" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="kuH-Ag-E7F" customClass="EditCounterViewController" customModule="Count" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="djr-JW-kuD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jgH-fu-B5o">
-                                <rect key="frame" x="20" y="108" width="335" height="220.66666666666669"/>
+                                <rect key="frame" x="20" y="83.999999999999986" width="374" height="222.66666666666663"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter counter name." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Id-xA-G81">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSF-lK-ly3">
-                                        <rect key="frame" x="157" y="50" width="21.333333333333343" height="40.666666666666657"/>
+                                        <rect key="frame" x="176.33333333333334" y="50" width="21.333333333333343" height="40.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKK-Lj-mLj">
-                                        <rect key="frame" x="152.66666666666666" y="110.66666666666667" width="30" height="45.000000000000014"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                        <state key="normal" title="+1"/>
-                                        <connections>
-                                            <action selector="addOneToCounter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Roe-jW-DT1"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoA-fy-NNO">
-                                        <rect key="frame" x="145" y="175.66666666666669" width="45" height="45"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                        <state key="normal" title="+10"/>
-                                        <connections>
-                                            <action selector="addTenToCounter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="drK-BJ-pMp"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JhZ-iF-geW">
+                                        <rect key="frame" x="0.0" y="110.66666666666666" width="374" height="47"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jA-Dj-7iD">
+                                                <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="47"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                <state key="normal" title="-1"/>
+                                                <connections>
+                                                    <action selector="alterNumberLabel:" destination="kuH-Ag-E7F" eventType="touchUpInside" id="ntX-fH-hnS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKK-Lj-mLj">
+                                                <rect key="frame" x="189.66666666666663" y="0.0" width="184.33333333333337" height="47"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <state key="normal" title="+1"/>
+                                                <connections>
+                                                    <action selector="alterNumberLabel:" destination="kuH-Ag-E7F" eventType="touchUpInside" id="lZz-cX-2TR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hed-Pb-9nb">
+                                        <rect key="frame" x="0.0" y="177.66666666666669" width="374" height="45"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDq-ck-ZrQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="45"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <state key="normal" title="-10"/>
+                                                <connections>
+                                                    <action selector="alterNumberLabel:" destination="kuH-Ag-E7F" eventType="touchUpInside" id="I3c-Yx-EWu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoA-fy-NNO">
+                                                <rect key="frame" x="189.66666666666663" y="0.0" width="184.33333333333337" height="45"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <state key="normal" title="+10"/>
+                                                <connections>
+                                                    <action selector="alterNumberLabel:" destination="kuH-Ag-E7F" eventType="touchUpInside" id="KKh-p0-3SJ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="1Id-xA-G81" firstAttribute="leading" secondItem="jgH-fu-B5o" secondAttribute="leading" id="CXw-pL-zba"/>
+                                    <constraint firstAttribute="trailing" secondItem="hed-Pb-9nb" secondAttribute="trailing" id="EDr-Te-Pkd"/>
                                     <constraint firstAttribute="trailing" secondItem="1Id-xA-G81" secondAttribute="trailing" id="dQh-Da-Rm1"/>
+                                    <constraint firstAttribute="trailing" secondItem="JhZ-iF-geW" secondAttribute="trailing" id="uvw-9V-snL"/>
+                                    <constraint firstItem="JhZ-iF-geW" firstAttribute="leading" secondItem="jgH-fu-B5o" secondAttribute="leading" id="xH9-2v-hWO"/>
+                                    <constraint firstItem="hed-Pb-9nb" firstAttribute="leading" secondItem="jgH-fu-B5o" secondAttribute="leading" id="zCy-t7-8Z8"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -141,50 +173,84 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="egz-n1-Ue3"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Counter" id="2QG-cU-A0S"/>
+                    <navigationItem key="navigationItem" title="Counter" id="2QG-cU-A0S">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="uhZ-wX-tw5">
+                            <connections>
+                                <segue destination="H29-Ww-iYw" kind="unwind" unwindAction="unwindToCounterListWithSender:" id="hqE-ej-4RS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="counterNameLabel" destination="2QG-cU-A0S" id="ztf-4h-DbY"/>
                         <outlet property="counterNumberLabel" destination="TSF-lK-ly3" id="c3E-X0-FUC"/>
                         <outlet property="nameTextField" destination="1Id-xA-G81" id="1qh-RI-qjk"/>
+                        <outlet property="saveButton" destination="uhZ-wX-tw5" id="7wD-dR-6YW"/>
+                        <outletCollection property="alterButtons" destination="3jA-Dj-7iD" collectionClass="NSMutableArray" id="57N-1b-A5k"/>
+                        <outletCollection property="alterButtons" destination="lKK-Lj-mLj" collectionClass="NSMutableArray" id="o0x-lZ-q75"/>
+                        <outletCollection property="alterButtons" destination="kDq-ck-ZrQ" collectionClass="NSMutableArray" id="kLX-U4-2fn"/>
+                        <outletCollection property="alterButtons" destination="uoA-fy-NNO" collectionClass="NSMutableArray" id="p8s-Nb-bLA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ce3-vA-azk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="H29-Ww-iYw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1127" y="1095"/>
+            <point key="canvasLocation" x="1468" y="1094.3349753694581"/>
         </scene>
         <!--Your counters-->
         <scene sceneID="CVl-jZ-qeK">
             <objects>
                 <tableViewController id="0jv-VI-21Z" customClass="CounterTableViewController" customModule="Count" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cuE-cN-nO9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CounterTableViewCell" rowHeight="90" id="Xpy-Ph-aNZ" customClass="CounterTableViewCell" customModule="Count" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xpy-Ph-aNZ" id="YxX-7i-LLc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.666666666666671"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="89.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpi-46-FaD">
-                                            <rect key="frame" x="201" y="34" width="166" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvG-XN-2mO">
-                                            <rect key="frame" x="8" y="34" width="174" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lka-R2-Jcc">
+                                            <rect key="frame" x="16" y="0.0" width="382" height="89.666666666666671"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvG-XN-2mO">
+                                                    <rect key="frame" x="0.0" y="34.666666666666664" width="41.666666666666664" height="20.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpi-46-FaD">
+                                                    <rect key="frame" x="49.666666666666657" y="34.666666666666664" width="294.33333333333337" height="20.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLU-vJ-IMt">
+                                                    <rect key="frame" x="352" y="23" width="30" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="30" id="FRp-ce-Pxa"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                    <state key="normal" title="+1"/>
+                                                    <connections>
+                                                        <action selector="addOne:" destination="0jv-VI-21Z" eventType="touchUpInside" id="ziL-c0-Xuo"/>
+                                                        <action selector="addOneToCounter:" destination="Xpy-Ph-aNZ" eventType="touchUpInside" id="dOB-Tv-1Bq"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="lka-R2-Jcc" firstAttribute="top" secondItem="YxX-7i-LLc" secondAttribute="top" id="7Ao-dq-vg6"/>
+                                        <constraint firstAttribute="bottom" secondItem="lka-R2-Jcc" secondAttribute="bottom" id="B5B-EC-gcx"/>
+                                        <constraint firstItem="lka-R2-Jcc" firstAttribute="leading" secondItem="YxX-7i-LLc" secondAttribute="leading" constant="16" id="Tdd-Tc-egI"/>
+                                        <constraint firstAttribute="trailing" secondItem="lka-R2-Jcc" secondAttribute="trailing" constant="16" id="pQC-jP-gLq"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="countLabel" destination="vpi-46-FaD" id="huQ-fT-DTa"/>
+                                    <outlet property="countLabel" destination="vpi-46-FaD" id="w3m-gn-86F"/>
                                     <outlet property="nameLabel" destination="MvG-XN-2mO" id="HRl-du-hQ9"/>
                                     <segue destination="kuH-Ag-E7F" kind="show" identifier="EditItem" id="SFQ-8V-P5r"/>
                                 </connections>
@@ -205,15 +271,16 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Xh-dN-BDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-900" y="132"/>
+            <point key="canvasLocation" x="-557.60000000000002" y="131.52709359605913"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Counters-->
         <scene sceneID="vdU-ff-Gr1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3Bu-ac-wcF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Counters" image="counterBarIcon" id="bDP-JM-R7c"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ex8-8r-yuM">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -223,7 +290,59 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UDI-XS-X6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1719" y="132"/>
+            <point key="canvasLocation" x="-1376.8" y="131.52709359605913"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="POY-Ua-Gzn">
+            <objects>
+                <viewController id="SS3-AV-xLv" customClass="AboutViewController" customModule="Count" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7bo-Xr-8LS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkL-ze-cV6">
+                                <rect key="frame" x="5" y="661.33333333333337" width="404" height="15.666666666666629"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gLY-g8-3cc">
+                                <rect key="frame" x="10" y="74" width="394" height="577.33333333333337"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="theFabytmLogo" translatesAutoresizingMaskIntoConstraints="NO" id="a3P-nE-XJP">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="266"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6v-qw-Blj">
+                                        <rect key="frame" x="0.0" y="266" width="394" height="311.33333333333326"/>
+                                        <state key="normal" title="Check out my YouTube Channel!"/>
+                                        <connections>
+                                            <action selector="youtubeButton:" destination="SS3-AV-xLv" eventType="touchUpInside" id="u3G-cp-522"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JQe-02-Yel" firstAttribute="bottom" secondItem="ZkL-ze-cV6" secondAttribute="bottom" constant="10" id="6ER-EZ-yjB"/>
+                            <constraint firstItem="ZkL-ze-cV6" firstAttribute="top" secondItem="gLY-g8-3cc" secondAttribute="bottom" constant="10" id="BtT-mH-PMQ"/>
+                            <constraint firstAttribute="trailing" secondItem="gLY-g8-3cc" secondAttribute="trailing" constant="10" id="D8t-2c-780"/>
+                            <constraint firstItem="gLY-g8-3cc" firstAttribute="top" secondItem="JQe-02-Yel" secondAttribute="top" constant="10" id="DUm-v3-6S0"/>
+                            <constraint firstItem="gLY-g8-3cc" firstAttribute="leading" secondItem="JQe-02-Yel" secondAttribute="leading" constant="10" id="LgW-jb-i7P"/>
+                            <constraint firstItem="ZkL-ze-cV6" firstAttribute="leading" secondItem="JQe-02-Yel" secondAttribute="leading" constant="5" id="bhy-cR-b9t"/>
+                            <constraint firstItem="JQe-02-Yel" firstAttribute="trailing" secondItem="ZkL-ze-cV6" secondAttribute="trailing" constant="5" id="rOj-M7-6ly"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JQe-02-Yel"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="FQk-0X-mx2"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="versionNumberLabel" destination="ZkL-ze-cV6" id="SsM-Tf-rBh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jgI-77-HwQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1228" y="872.66009852216757"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="deh-10-apb">
@@ -232,7 +351,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="STo-Nd-Rf7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WNf-pK-Jqm">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -242,7 +361,50 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTj-oU-hI5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="78" y="132"/>
+            <point key="canvasLocation" x="420" y="131.52709359605913"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="GpT-5P-oTo">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="LQQ-OM-T31" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xfe-c7-adr">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="3Bu-ac-wcF" kind="relationship" relationship="viewControllers" id="bwa-tg-uWc"/>
+                        <segue destination="1ic-vm-2BV" kind="relationship" relationship="viewControllers" id="Iu8-Ec-yYe"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="afg-Xs-gUq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2019.2" y="131.52709359605913"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="1Kz-M1-nFy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1ic-vm-2BV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="About" image="AboutTabImage" id="ifG-ep-4Bs"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="67h-kf-joH">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SS3-AV-xLv" kind="relationship" relationship="rootViewController" id="fxW-oh-wX0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Soa-28-41W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2020" y="873"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AboutTabImage" width="30" height="30"/>
+        <image name="counterBarIcon" width="25" height="25"/>
+        <image name="theFabytmLogo" width="266" height="266"/>
+    </resources>
 </document>
