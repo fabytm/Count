@@ -103,24 +103,19 @@ class EditCounterViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func alterNumberLabel(_ sender: UIButton){
         if let buttonFunction = alterButtons.index(of: sender){
-            var counter: Int = Int(counterNumberLabel.text ?? "") ?? 0
             switch buttonFunction {
             case 0:
-                if(counter >= 1){
-                    counter -= 1
-                }
+                counterObject?.decrement(by: 1)
             case 1:
-                counter += 1
+                counterObject?.increment(by: 1)
             case 2:
-                if(counter >= 10){
-                    counter -= 10
-                }
+                counterObject?.decrement(by: 10)
             case 3:
-                counter += 10
+                counterObject?.increment(by: 10)
             default:
                 break
             }
-           counterNumberLabel.text = "\(counter)"
+           counterNumberLabel.text = "\(counterObject?.count ?? 0)"
         }
     }
     

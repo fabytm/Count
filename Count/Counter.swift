@@ -39,6 +39,18 @@ class Counter: NSObject, NSCoding {
         self.name = name
         self.count = count
     }
+    
+    //MARK: Methods
+    
+    func increment (by amount: Int) {
+        count += amount
+    }
+    
+    func decrement (by amount: Int) {
+        if(count >= amount){
+            count -= amount
+        }
+    }
 
     //MARK: NSCoding
     

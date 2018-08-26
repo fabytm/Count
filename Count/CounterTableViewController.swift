@@ -195,13 +195,8 @@ class CounterTableViewController: UITableViewController, WCSessionDelegate {
     @IBAction func addOne(_ sender: UIButton) {
         
         if let indexPath = getIndexPath(of: sender){
-        
-        
-        var counter: Int = counters[indexPath.row].count
-        counter += 1
-        counters[indexPath.row].count = counter
-        
-        saveCounters()
+            counters[indexPath.row].increment(by: 1)
+            saveCounters()
         }
     }
     
